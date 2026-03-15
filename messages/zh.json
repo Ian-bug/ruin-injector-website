@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "title": "Ruin DLL 注入器 - 现代化 Windows DLL 注入工具",
+    "description": "轻量级、强大的 DLL 注入器，使用 Rust 和 egui 构建"
+  },
+  "header": {
+    "logo": "Ruin 注入器",
+    "nav": {
+      "features": "功能特性",
+      "docs": "文档",
+      "download": "下载"
+    }
+  },
+  "hero": {
+    "badge": "版本 1.2.0",
+    "title": "现代化 Windows DLL 注入器",
+    "subtitle": "具有现代 GUI 界面的轻量级、强大的 DLL 注入器。使用 Rust 和 egui 构建，专为 Windows 应用程序设计，具有流畅的动画和直观的控件。",
+    "cta": {
+      "download": "立即下载",
+      "docs": "查看文档"
+    }
+  },
+  "features": {
+    "title": "强大功能",
+    "subtitle": "专业 DLL 注入所需的一切",
+    "list": {
+      "modernGui": {
+        "title": "现代 GUI",
+        "description": "使用 egui 构建的简洁响应式界面，带有流畅动画"
+      },
+      "animatedTransitions": {
+        "title": "动画过渡",
+        "description": "淡入、滑入和窗口缩放动画"
+      },
+      "processBrowser": {
+        "title": "进程浏览器",
+        "description": "从运行中的进程中进行可视化选择，支持搜索功能"
+      },
+      "autoConfig": {
+        "title": "自动配置",
+        "description": "在会话之间保存设置（DLL 路径、进程偏好）"
+      },
+      "autoInject": {
+        "title": "自动注入",
+        "description": "检测到目标进程时自动注入"
+      },
+      "injectionHistory": {
+        "title": "注入历史",
+        "description": "记录最近 10 次注入及其时间戳"
+      },
+      "realtimeLogging": {
+        "title": "实时日志",
+        "description": "监控注入状态，带有动画日志条目"
+      },
+      "lightweight": {
+        "title": "轻量级",
+        "description": "约 4.5 MB 可执行文件，依赖最少"
+      }
+    }
+  },
+  "screenshots": {
+    "title": "简洁界面",
+    "subtitle": "简单、直观的设计，完成任务"
+  },
+  "technical": {
+    "title": "技术实现",
+    "subtitle": "使用现代技术和最佳实践构建",
+    "techStack": "技术栈",
+    "architecture": "架构",
+    "features": "关键特性",
+    "process": "注入流程",
+    "apis": "核心 Windows API",
+    "animation": "动画系统",
+    "errorHandling": "错误处理"
+  },
+  "documentation": {
+    "title": "文档",
+    "subtitle": "快速入门指南和详细说明",
+    "quickStart": {
+      "title": "快速开始",
+      "building": {
+        "title": "从源代码编译",
+        "content": "从源代码构建，运行 cargo 命令。编译后的可执行文件将位于 target/release/ruin-injector.exe。"
+      },
+      "running": {
+        "title": "运行应用程序",
+        "content": "只需双击 ruin-injector.exe 文件即可启动 GUI 应用程序。为获得最佳效果，右键单击并选择以管理员身份运行。"
+      }
+    },
+    "usage": {
+      "title": "使用指南",
+      "selectDll": {
+        "title": "1. 选择 DLL 文件",
+        "content": "点击浏览按钮并导航到您的 DLL 文件。"
+      },
+      "selectProcess": {
+        "title": "2. 选择目标进程",
+        "content": "点击列表按钮，使用搜索框过滤进程，然后单击所需的进程。"
+      },
+      "inject": {
+        "title": "3. 注入",
+        "content": "点击注入 DLL 按钮并监控日志区域查看成功/错误消息。"
+      }
+    },
+    "requirements": {
+      "title": "系统要求",
+      "windows": "Windows 10/11 (64 位)",
+      "admin": "管理员权限（某些进程需要）",
+      "dll": "要注入的 DLL 文件"
+    },
+    "faq": {
+      "title": "常见问题",
+      "q1": {
+        "question": "我需要管理员权限吗？",
+        "answer": "某些进程需要管理员访问权限，但并非全部。注入器将使用当前权限尝试注入，如果需要提升权限则优雅失败。"
+      },
+      "q2": {
+        "question": "我可以注入到系统保护的进程吗？",
+        "answer": "不可以，出于安全原因，无法注入系统保护的进程如 csrss.exe 或 lsass.exe。"
+      },
+      "q3": {
+        "question": "为什么杀毒软件会标记注入器？",
+        "answer": "DLL 注入是杀毒软件监控的技术。这对于注入工具来说是预期行为。"
+      },
+      "q4": {
+        "question": "如何添加自定义图标？",
+        "answer": "将 .ico 文件命名为 icon.ico 放在项目根目录，然后重新编译。详细说明请参阅 ICON.md。"
+      }
+    },
+    "viewFull": "在 GitHub 上查看完整文档"
+  },
+  "download": {
+    "title": "准备开始了吗？",
+    "subtitle": "下载 Ruin DLL 注入器，开始向您的 Windows 应用程序注入 DLL。",
+    "version": "版本 1.2.0",
+    "size": "约 4.5 MB",
+    "button": "从 GitHub 下载",
+    "github": "在 GitHub 上查看",
+    "license": "仅供教育和开发使用"
+  },
+  "footer": {
+    "description": "基于 Rust 和 egui 构建的现代化 DLL 注入器",
+    "links": {
+      "github": "GitHub 仓库",
+      "issues": "问题跟踪器",
+      "releases": "发布版本",
+      "license": "许可证"
+    },
+    "copyright": "© 2024 Ruin DLL 注入器。保留所有权利。",
+    "disclaimer": "本工具按原样提供，仅供教育和开发目的使用。"
+  }
+}

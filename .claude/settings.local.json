@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(ls:*)",
+      "Read(//c/Users/ianaw/.agents/skills/ui-ux-pro-max/**)",
+      "Bash(python3 scripts/search.py \"developer tool technical software\" --domain product)",
+      "Bash(python3:*)",
+      "Bash(python:*)",
+      "Bash(grep:*)",
+      "Bash(tasklist:*)"
+    ]
+  }
+}

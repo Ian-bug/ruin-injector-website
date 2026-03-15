@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "title": "Ruin DLL Injector - Modern Windows DLL Injection Tool",
+    "description": "Lightweight, powerful DLL injector built with Rust and egui"
+  },
+  "header": {
+    "logo": "Ruin Injector",
+    "nav": {
+      "features": "Features",
+      "docs": "Documentation",
+      "download": "Download"
+    }
+  },
+  "hero": {
+    "badge": "Version 1.2.0",
+    "title": "Modern DLL Injection for Windows",
+    "subtitle": "A lightweight, powerful DLL injector with a modern GUI interface. Built with Rust and egui for Windows applications featuring smooth animations and intuitive controls.",
+    "cta": {
+      "download": "Download Now",
+      "docs": "View Documentation"
+    }
+  },
+  "features": {
+    "title": "Powerful Features",
+    "subtitle": "Everything you need for professional DLL injection",
+    "list": {
+      "modernGui": {
+        "title": "Modern GUI",
+        "description": "Clean, responsive interface built with egui with smooth animations"
+      },
+      "animatedTransitions": {
+        "title": "Animated Transitions",
+        "description": "Fade-in, slide-in, and window scaling animations"
+      },
+      "processBrowser": {
+        "title": "Process Browser",
+        "description": "Visual selection from running processes with search functionality"
+      },
+      "autoConfig": {
+        "title": "Auto Configuration",
+        "description": "Saves your settings (DLL path, process preferences) between sessions"
+      },
+      "autoInject": {
+        "title": "Auto Inject",
+        "description": "Automatically inject when target process is detected"
+      },
+      "injectionHistory": {
+        "title": "Injection History",
+        "description": "Tracks last 10 injections with timestamps"
+      },
+      "realtimeLogging": {
+        "title": "Real-time Logging",
+        "description": "Monitor injection status with animated log entries"
+      },
+      "lightweight": {
+        "title": "Lightweight",
+        "description": "~4.5 MB executable with minimal dependencies"
+      }
+    }
+  },
+  "screenshots": {
+    "title": "Clean Interface",
+    "subtitle": "Simple, intuitive design that gets the job done"
+  },
+  "technical": {
+    "title": "Technical Implementation",
+    "subtitle": "Built with modern technologies and best practices",
+    "techStack": "Tech Stack",
+    "architecture": "Architecture",
+    "features": "Key Features",
+    "process": "Injection Process",
+    "apis": "Core Windows APIs",
+    "animation": "Animation System",
+    "errorHandling": "Error Handling"
+  },
+  "documentation": {
+    "title": "Documentation",
+    "subtitle": "Quick start guides and detailed instructions",
+    "quickStart": {
+      "title": "Quick Start",
+      "building": {
+        "title": "Building from Source",
+        "content": "To build from source, run the cargo command. The compiled executable will be at `target/release/ruin-injector.exe`."
+      },
+      "running": {
+        "title": "Running the Application",
+        "content": "Simply double-click the `ruin-injector.exe` file to launch the GUI application. For best results, right-click and select 'Run as administrator'."
+      }
+    },
+    "usage": {
+      "title": "Usage Guide",
+      "selectDll": {
+        "title": "1. Select DLL File",
+        "content": "Click the Browse button and navigate to your DLL file."
+      },
+      "selectProcess": {
+        "title": "2. Choose Target Process",
+        "content": "Click the List button, use the search box to filter processes, and click on your desired process."
+      },
+      "inject": {
+        "title": "3. Inject",
+        "content": "Click the Inject DLL button and monitor the log section for success/error messages."
+      }
+    },
+    "requirements": {
+      "title": "System Requirements",
+      "windows": "Windows 10/11 (64-bit)",
+      "admin": "Administrator privileges (required for some processes)",
+      "dll": "The DLL file you want to inject"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": {
+        "question": "Do I need administrator privileges?",
+        "answer": "Some processes require administrator access, but not all. The injector will attempt injection with current permissions and fail gracefully if elevation is required."
+      },
+      "q2": {
+        "question": "Can I inject into system-protected processes?",
+        "answer": "No, system-protected processes like csrss.exe or lsass.exe cannot be injected for security reasons."
+      },
+      "q3": {
+        "question": "Why does antivirus flag the injector?",
+        "answer": "DLL injection is a technique monitored by antivirus software. This is expected behavior for injection tools."
+      },
+      "q4": {
+        "question": "How do I add a custom icon?",
+        "answer": "Place your .ico file as icon.ico in the project root directory and rebuild. See ICON.md for detailed instructions."
+      }
+    },
+    "viewFull": "View Full Documentation on GitHub"
+  },
+  "download": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Download Ruin DLL Injector and start injecting DLLs into your Windows applications.",
+    "version": "Version 1.2.0",
+    "size": "~4.5 MB",
+    "button": "Download from GitHub",
+    "github": "View on GitHub",
+    "license": "Educational and Development Use Only"
+  },
+  "footer": {
+    "description": "A modern DLL injector built with Rust and egui",
+    "links": {
+      "github": "GitHub Repository",
+      "issues": "Issue Tracker",
+      "releases": "Releases",
+      "license": "License"
+    },
+    "copyright": "© 2024 Ruin DLL Injector. All rights reserved.",
+    "disclaimer": "This tool is provided as-is for educational and development purposes only."
+  }
+}
