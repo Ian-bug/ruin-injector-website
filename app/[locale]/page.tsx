@@ -1,4 +1,3 @@
-import { setRequestLocale } from 'next-intl/server';
 import Header from '@/components/layout/Header';
 import Hero from '@/components/sections/Hero';
 import Features from '@/components/sections/Features';
@@ -8,6 +7,8 @@ import Documentation from '@/components/sections/Documentation';
 import Download from '@/components/sections/Download';
 import Footer from '@/components/sections/Footer';
 import { getLatestRelease, parseVersion } from '@/lib/github';
+
+export const revalidate = 300;
 
 export default async function Home() {
   const release = await getLatestRelease();
