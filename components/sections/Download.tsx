@@ -6,7 +6,11 @@ import Button from '@/components/ui/Button';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import Card from '@/components/ui/Card';
 
-export default function Download() {
+interface DownloadProps {
+  version: string;
+}
+
+export default function Download({ version }: DownloadProps) {
   const t = useTranslations('download');
 
   return (
@@ -29,7 +33,7 @@ export default function Download() {
             <div className="space-y-4">
               <div className="flex items-center justify-center gap-3">
                 <span className="text-5xl font-bold text-gradient">
-                  v1.2.0
+                  {version}
                 </span>
               </div>
               <p className="text-text-secondary">{t('size')}</p>

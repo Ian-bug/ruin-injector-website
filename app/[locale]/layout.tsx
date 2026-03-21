@@ -14,16 +14,9 @@ export const metadata: Metadata = {
   title: 'Ruin DLL Injector - Modern Windows DLL Injection Tool',
   description: 'Lightweight, powerful DLL injector built with Rust and egui',
   icons: {
-    icon: [
-      { url: '/favicon.svg' },
-      { url: '/favicon-32x32.svg', sizes: '32x32', type: 'image/svg+xml' },
-      { url: '/favicon-16x16.svg', sizes: '16x16', type: 'image/svg+xml' },
-    ],
+    icon: '/favicon.svg',
     shortcut: '/favicon.svg',
-    apple: [
-      { url: '/favicon.svg' },
-      { url: '/favicon-32x32.svg', sizes: '32x32', type: 'image/svg+xml' },
-    ],
+    apple: '/favicon.svg',
   },
 };
 

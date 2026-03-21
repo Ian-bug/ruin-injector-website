@@ -12,7 +12,6 @@
     }
   },
   "hero": {
-    "badge": "版本 1.2.0",
     "title": "现代化 Windows DLL 注入器",
     "subtitle": "具有现代 GUI 界面的轻量级、强大的 DLL 注入器。使用 Rust 和 egui 构建，专为 Windows 应用程序设计，具有流畅的动画和直观的控件。",
     "cta": {
@@ -132,7 +131,6 @@
   "download": {
     "title": "准备开始了吗？",
     "subtitle": "下载 Ruin DLL 注入器，开始向您的 Windows 应用程序注入 DLL。",
-    "version": "版本 1.2.0",
     "size": "约 4.5 MB",
     "button": "从 GitHub 下载",
     "github": "在 GitHub 上查看",
@@ -146,7 +144,6 @@
       "releases": "发布版本",
       "license": "许可证"
     },
-    "copyright": "© 2024 Ruin DLL 注入器。保留所有权利。",
     "disclaimer": "本工具按原样提供，仅供教育和开发目的使用。"
   }
 }

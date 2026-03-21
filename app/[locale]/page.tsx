@@ -7,17 +7,21 @@ import Technical from '@/components/sections/Technical';
 import Documentation from '@/components/sections/Documentation';
 import Download from '@/components/sections/Download';
 import Footer from '@/components/sections/Footer';
+import { getLatestRelease, parseVersion } from '@/lib/github';
 
-export default function Home() {
+export default async function Home() {
+  const release = await getLatestRelease();
+  const version = release ? parseVersion(release.tag_name) : 'v1.2.0';
+
   return (
     <main className="min-h-screen">
       <Header />
-      <Hero />
+      <Hero version={version} />
       <Features />
       <Screenshots />
       <Technical />
       <Documentation />
-      <Download />
+      <Download version={version} />
       <Footer />
     </main>
   );

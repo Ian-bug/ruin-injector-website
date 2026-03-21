@@ -7,7 +7,11 @@ import Button from '@/components/ui/Button';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import Image from 'next/image';
 
-export default function Hero() {
+interface HeroProps {
+  version: string;
+}
+
+export default function Hero({ version }: HeroProps) {
   const t = useTranslations('hero');
 
   return (
@@ -23,7 +27,7 @@ export default function Hero() {
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-background-tertiary border-2 border-accent-primary/20">
                 <span className="w-2 h-2 rounded-full bg-accent-primary animate-pulse" />
                 <span className="text-sm font-medium text-accent-primary">
-                  {t('badge')}
+                  {version}
                 </span>
               </div>
             </ScrollReveal>
@@ -109,7 +113,7 @@ export default function Hero() {
                       </svg>
                     </div>
                     <p className="text-text-secondary text-lg">Ruin DLL Injector</p>
-                    <p className="text-sm text-text-tertiary">v1.2.0</p>
+                    <p className="text-sm text-text-tertiary">{version}</p>
                   </div>
                 </div>
               </div>

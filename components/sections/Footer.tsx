@@ -6,6 +6,7 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 
 export default function Footer() {
   const t = useTranslations('footer');
+  const currentYear = new Date().getFullYear();
 
   const links = [
     { href: 'https://github.com/Ian-bug/ruin-injector', label: t('links.github') },
@@ -76,7 +77,7 @@ export default function Footer() {
         <ScrollReveal delay={0.3}>
           <div className="pt-8 border-t border-border">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-text-tertiary">
-              <p>{t('copyright')}</p>
+              <p>© {currentYear} Ruin DLL Injector. All rights reserved.</p>
               <p>{t('disclaimer')}</p>
             </div>
           </div>
