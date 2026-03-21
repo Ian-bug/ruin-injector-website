@@ -5,7 +5,11 @@ import { useTranslations } from 'next-intl';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import Image from 'next/image';
 
-export default function Screenshots() {
+interface ScreenshotsProps {
+  version: string;
+}
+
+export default function Screenshots({ version }: ScreenshotsProps) {
   const t = useTranslations('screenshots');
 
   return (
@@ -38,7 +42,7 @@ export default function Screenshots() {
               </div>
               <div className="mt-4 text-center">
                 <p className="text-sm text-text-tertiary">
-                  Ruin DLL Injector v1.2.0 - Main Interface
+                  Ruin DLL Injector {version} - Main Interface
                 </p>
               </div>
             </div>

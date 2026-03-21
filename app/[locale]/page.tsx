@@ -19,7 +19,7 @@ export default async function Home() {
       <Header />
       <Hero version={version} />
       <Features />
-      <Screenshots />
+      <Screenshots version={version} />
       <Technical />
       <Documentation />
       <Download version={version} />
