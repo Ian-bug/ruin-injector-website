@@ -1,33 +1,12 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useTranslations } from 'next-intl';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
 export default function Footer() {
   const t = useTranslations('footer');
   const currentYear = new Date().getFullYear();
-
-  // Load Ko-fi widget
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://storage.ko-fi.com/cdn/widget/Widget_2.js';
-    script.onload = () => {
-      // @ts-ignore
-      if (window.kofiwidget2) {
-        // @ts-ignore
-        window.kofiwidget2.init('Support me on Ko-fi', '#FF4444', 'Y8Y01WG0DL');
-        // @ts-ignore
-        window.kofiwidget2.draw();
-      }
-    };
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
 
   const links = [
     { href: 'https://github.com/Ian-bug/ruin-injector', label: t('links.github') },
@@ -102,7 +81,17 @@ export default function Footer() {
                 <p>© {currentYear} Ruin DLL Injector. All rights reserved.</p>
                 <p>{t('disclaimer')}</p>
               </div>
-              <div id="kofi-widget-container"></div>
+              <a
+                href="https://ko-fi.com/Y8Y01WG0DL"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#FF5E5B] hover:bg-[#FF4444] text-white rounded-lg transition-colors font-medium"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.246 5.229-4.388 5.229-4.388s.468-3.261-.173-6.43zM9.646 11.534v-5.2h7.718v5.2H9.646zm11.386 1.896v-5.2h1.883v5.2h-1.883z" />
+                </svg>
+                Support me on Ko-fi
+              </a>
             </div>
           </div>
         </ScrollReveal>
