@@ -1,12 +1,33 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
 export default function Footer() {
   const t = useTranslations('footer');
   const currentYear = new Date().getFullYear();
+
+  // Load Ko-fi widget
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://storage.ko-fi.com/cdn/widget/Widget_2.js';
+    script.onload = () => {
+      // @ts-ignore
+      if (window.kofiwidget2) {
+        // @ts-ignore
+        window.kofiwidget2.init('Support me on Ko-fi', '#FF4444', 'Y8Y01WG0DL');
+        // @ts-ignore
+        window.kofiwidget2.draw();
+      }
+    };
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const links = [
     { href: 'https://github.com/Ian-bug/ruin-injector', label: t('links.github') },
@@ -76,9 +97,12 @@ export default function Footer() {
         {/* Bottom */}
         <ScrollReveal delay={0.3}>
           <div className="pt-8 border-t border-border">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-text-tertiary">
-              <p>© {currentYear} Ruin DLL Injector. All rights reserved.</p>
-              <p>{t('disclaimer')}</p>
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-text-tertiary">
+              <div className="flex flex-col md:flex-row items-center gap-4">
+                <p>© {currentYear} Ruin DLL Injector. All rights reserved.</p>
+                <p>{t('disclaimer')}</p>
+              </div>
+              <div id="kofi-widget-container"></div>
             </div>
           </div>
         </ScrollReveal>
