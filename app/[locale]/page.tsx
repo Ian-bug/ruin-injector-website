@@ -12,7 +12,7 @@ export const revalidate = 300;
 
 export default async function Home() {
   const release = await getLatestRelease();
-  const version = release ? parseVersion(release.tag_name) : 'v1.2.0';
+  const version = release ? parseVersion(release.tag_name) : 'v1.3.0';
 
   return (
     <main className="min-h-screen">

@@ -54,6 +54,22 @@
       "lightweight": {
         "title": "轻量级",
         "description": "约 4.5 MB 可执行文件，依赖最少"
+      },
+      "uwpProtection": {
+        "title": "UWP 检测",
+        "description": "检测 UWP 应用程序（WindowsApps/AppPackages），帮助做出明智的注入决定"
+      },
+      "architectureDetection": {
+        "title": "架构检测",
+        "description": "通过验证防止 32 位/64 位不匹配错误"
+      },
+      "adminStatus": {
+        "title": "管理员状态",
+        "description": "实时管理员权限指示器，带有脉冲动画"
+      },
+      "robustErrorHandling": {
+        "title": "稳健错误处理",
+        "description": "全面的错误类型，包含可操作的消息和建议"
       }
     }
   },
@@ -124,6 +140,14 @@
       "q4": {
         "question": "如何添加自定义图标？",
         "answer": "将 .ico 文件命名为 icon.ico 放在项目根目录，然后重新编译。详细说明请参阅 ICON.md。"
+      },
+      "q5": {
+        "question": "我可以注入到 UWP 应用程序吗？",
+        "answer": "可以，您可以注入到 UWP（通用 Windows 平台）应用程序。注入器会检测 UWP 应用程序但不会阻止注入 - 它允许您就目标进程做出明智的决定。"
+      },
+      "q6": {
+        "question": "如果 DLL 架构不匹配会怎样？",
+        "answer": "注入器会自动检测进程架构并验证兼容性。如果不匹配（例如 32 位注入器配合 64 位进程），它将显示清晰的错误消息说明问题。"
       }
     },
     "viewFull": "在 GitHub 上查看完整文档"

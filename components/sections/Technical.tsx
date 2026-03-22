@@ -22,6 +22,8 @@ export default function Technical() {
     'CreateToolhelp32Snapshot',
     'Process32First/Next',
     'OpenProcess',
+    'IsWow64Process',
+    'QueryFullProcessImageNameW',
     'VirtualAllocEx',
     'WriteProcessMemory',
     'GetProcAddress',
@@ -80,29 +82,41 @@ export default function Technical() {
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-accent-blue text-white text-sm flex items-center justify-center font-bold">
                     2
                   </span>
-                  <span>Process Access - Open with required permissions</span>
+                  <span>UWP Detection - Identify UWP apps for informed decisions</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-accent-blue text-white text-sm flex items-center justify-center font-bold">
                     3
                   </span>
-                  <span>Memory Allocation - Allocate memory in target</span>
+                  <span>Architecture Validation - Ensure 32/64-bit compatibility</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-accent-blue text-white text-sm flex items-center justify-center font-bold">
                     4
                   </span>
-                  <span>DLL Path Injection - Write DLL path to memory</span>
+                  <span>Process Access - Open with required permissions</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-accent-blue text-white text-sm flex items-center justify-center font-bold">
                     5
                   </span>
-                  <span>Remote Thread Creation - Create execution thread</span>
+                  <span>Memory Allocation - Allocate memory in target</span>
                 </li>
                 <li className="flex gap-3">
                   <span className="flex-shrink-0 w-6 h-6 rounded-full bg-accent-blue text-white text-sm flex items-center justify-center font-bold">
                     6
+                  </span>
+                  <span>DLL Path Injection - Write DLL path to memory</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-accent-blue text-white text-sm flex items-center justify-center font-bold">
+                    7
+                  </span>
+                  <span>Remote Thread Creation - Create execution thread</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-accent-blue text-white text-sm flex items-center justify-center font-bold">
+                    8
                   </span>
                   <span>Cleanup - Free memory and close handles</span>
                 </li>
@@ -132,12 +146,18 @@ export default function Technical() {
             <Card>
               <h3 className="text-xl font-bold mb-4">{t('animation')}</h3>
               <CodeBlock language="rust">
-{`const ANIMATION_SPEED: f32 = 0.15;
-const NEW_LOG_DURATION_FRAMES: usize = 120;
+{`trait Animatable {
+    fn update(&mut self, dt: f32);
+    fn is_complete(&self) -> bool;
+}
 
-fn lerp(start: f32, end: f32, t: f32) -> f32 {
-    start + (end - start) * t
-}`}
+const ANIMATION_DEFAULT_SPEED: f32 = 0.12;
+const PULSE_SPEED_DEFAULT: f32 = 0.03;
+
+struct Fade { current: f32, target: f32, speed: f32 }
+struct Scale { current: f32, target: f32, speed: f32 }
+struct Slide { current: f32, target: f32, speed: f32 }
+struct Pulse { phase: f32, speed: f32, amplitude: f32, base: f32 }`}
               </CodeBlock>
             </Card>
           </ScrollReveal>
@@ -155,6 +175,10 @@ fn lerp(start: f32, end: f32, t: f32) -> f32 {
     CreateRemoteThreadFailed(String),
     InvalidPath(String),
     InvalidProcessName(String),
+    PathTooLong(String),
+    DllLoadFailed(String),
+    ThreadWaitFailed(String),
+    UwpProcessNotSupported(String),
 }`}
               </CodeBlock>
             </Card>

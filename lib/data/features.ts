@@ -12,4 +12,8 @@ export const features: Feature[] = [
   { key: 'injectionHistory', icon: '📜' },
   { key: 'realtimeLogging', icon: '📊' },
   { key: 'lightweight', icon: '🪶' },
+  { key: 'uwpProtection', icon: '🛡️' },
+  { key: 'architectureDetection', icon: '🏗️' },
+  { key: 'adminStatus', icon: '👤' },
+  { key: 'robustErrorHandling', icon: '🛠️' },
 ];

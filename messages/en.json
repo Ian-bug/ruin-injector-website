@@ -54,6 +54,22 @@
       "lightweight": {
         "title": "Lightweight",
         "description": "~4.5 MB executable with minimal dependencies"
+      },
+      "uwpProtection": {
+        "title": "UWP Detection",
+        "description": "Detects UWP apps (WindowsApps/AppPackages) for informed injection decisions"
+      },
+      "architectureDetection": {
+        "title": "Architecture Detection",
+        "description": "Prevents 32-bit/64-bit mismatch errors with validation"
+      },
+      "adminStatus": {
+        "title": "Admin Status",
+        "description": "Real-time administrator privilege indicator with pulse animation"
+      },
+      "robustErrorHandling": {
+        "title": "Robust Error Handling",
+        "description": "Comprehensive error types with actionable messages and suggestions"
       }
     }
   },
@@ -124,6 +140,14 @@
       "q4": {
         "question": "How do I add a custom icon?",
         "answer": "Place your .ico file as icon.ico in the project root directory and rebuild. See ICON.md for detailed instructions."
+      },
+      "q5": {
+        "question": "Can I inject into UWP applications?",
+        "answer": "Yes, you can inject into UWP (Universal Windows Platform) applications. The injector detects UWP apps but does not block injection - it allows you to make informed decisions about which processes to target."
+      },
+      "q6": {
+        "question": "What happens if my DLL architecture doesn't match?",
+        "answer": "The injector automatically detects process architecture and validates compatibility. If there's a mismatch (e.g., 32-bit injector with 64-bit process), it will display a clear error message explaining the issue."
       }
     },
     "viewFull": "View Full Documentation on GitHub"
