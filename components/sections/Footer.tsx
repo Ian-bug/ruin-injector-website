@@ -3,6 +3,7 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import { Coffee } from 'lucide-react';
 
 export default function Footer() {
   const t = useTranslations('footer');
@@ -87,9 +88,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 bg-[#FF5E5B] hover:bg-[#FF4444] text-white rounded-lg transition-colors font-medium"
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.246 5.229-4.388 5.229-4.388s.468-3.261-.173-6.43zM9.646 11.534v-5.2h7.718v5.2H9.646zm11.386 1.896v-5.2h1.883v5.2h-1.883z" />
-                </svg>
+                <Coffee className="w-5 h-5" />
                 Support me on Ko-fi
               </a>
             </div>
