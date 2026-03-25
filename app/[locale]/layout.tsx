@@ -14,9 +14,9 @@ export const metadata: Metadata = {
   title: 'Ruin DLL Injector - Modern Windows DLL Injection Tool',
   description: 'Lightweight, powerful DLL injector built with Rust and egui',
   icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    icon: '/icon.ico',
+    shortcut: '/extension_icon512.png',
+    apple: '/extension_icon512.png',
   },
 };
 

@@ -11,15 +11,15 @@
   --color-text-secondary: #A3A3A3;
   --color-text-tertiary: #737373;
   --color-text-muted: #525252;
-  --color-accent-primary: #FF4444;
-  --color-accent-primary-hover: #CC0000;
-  --color-accent-secondary: #FF6B35;
-  --color-accent-secondary-hover: #E85D27;
-  --color-border-default: #404040;
-  --color-border-hover: #525252;
-  --color-border-accent: #FF4444;
-  --color-glow-primary: rgba(255, 68, 68, 0.2);
-  --color-glow-secondary: rgba(255, 107, 53, 0.15);
+  --color-accent-primary: #4d4d4d;
+  --color-accent-primary-hover: #3d3d3d;
+  --color-accent-secondary: #000000;
+  --color-accent-secondary-hover: #000000;
+  --color-border-default: #4d4d4d;
+  --color-border-hover: #666666;
+  --color-border-accent: #4d4d4d;
+  --color-glow-primary: rgba(77, 77, 77, 0.3);
+  --color-glow-secondary: rgba(0, 0, 0, 0.5);
   --color-glow-danger: rgba(220, 38, 38, 0.25);
 }
 
@@ -61,7 +61,7 @@ body {
 
 /* Selection */
 ::selection {
-  background-color: #FF4444;
+  background-color: #4d4d4d;
   color: white;
 }
 
@@ -76,7 +76,7 @@ body {
   }
 
   .bg-gradient-radial {
-    background: radial-gradient(circle at center, var(--color-glow-primary) 0%, transparent 70%);
+    background: radial-gradient(circle at top, var(--color-glow-primary) 0%, transparent 100%);
   }
 
   .bg-gradient-mesh {
