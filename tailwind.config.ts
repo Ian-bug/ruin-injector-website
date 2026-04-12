@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -9,45 +9,37 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: {
-          primary: '#0D0D0D',
-          secondary: '#1A1A1A',
-          tertiary: '#262626',
-          elevated: '#333333',
+        bg: {
+          DEFAULT: '#0A0A0B',
+          secondary: '#141416',
+          tertiary: '#1E1E22',
+          elevated: '#28282E',
         },
-        text: {
-          primary: '#E5E5E5',
-          secondary: '#A3A3A3',
-          tertiary: '#737373',
-          muted: '#525252',
+        txt: {
+          DEFAULT: '#ECECED',
+          secondary: '#9E9EA8',
+          tertiary: '#62626C',
+          muted: '#3E3E46',
         },
         accent: {
-          primary: '#4d4d4d',
-          primaryHover: '#3d3d3d',
-          secondary: '#000000',
-          secondaryHover: '#000000',
-          danger: '#DC2626',
-          warning: '#F59E0B',
+          DEFAULT: '#FF4141',
+          hover: '#CC2E2E',
+          soft: 'rgba(255, 65, 65, 0.12)',
         },
         border: {
-          default: '#4d4d4d',
-          hover: '#666666',
-          accent: '#4d4d4d',
-        },
-        glow: {
-          primary: 'rgba(77, 77, 77, 0.3)',
-          secondary: 'rgba(0, 0, 0, 0.5)',
-          danger: 'rgba(220, 38, 38, 0.25)',
+          DEFAULT: '#2A2A30',
+          hover: '#3A3A42',
+          accent: '#FF4141',
         },
       },
       fontFamily: {
-        sans: ['Segoe UI', 'Roboto', 'system-ui', 'sans-serif'],
-        mono: ['Consolas', 'Monaco', 'monospace'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
       },
       animation: {
-        'fade-in': 'fadeIn 0.5s ease-in',
-        'slide-up': 'slideUp 0.5s ease-out',
-        'float': 'float 3s ease-in-out infinite',
+        'fade-in': 'fadeIn 0.6s ease-out forwards',
+        'slide-up': 'slideUp 0.6s ease-out forwards',
+        float: 'float 4s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -55,16 +47,17 @@ const config: Config = {
           '100%': { opacity: '1' },
         },
         slideUp: {
-          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '0%': { transform: 'translateY(24px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
+          '50%': { transform: 'translateY(-8px)' },
         },
       },
     },
   },
   plugins: [],
-}
-export default config
+};
+
+export default config;

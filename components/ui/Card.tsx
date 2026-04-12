@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+
 import { cn } from '@/lib/utils';
 
 interface CardProps {
@@ -11,8 +12,8 @@ export default function Card({ children, className, hover = true }: CardProps) {
   return (
     <div
       className={cn(
-        'bg-background-secondary border-2 border-border-default rounded-xl p-6 transition-all duration-300 cursor-pointer',
-        hover && 'hover:shadow-xl hover:border-accent-primary hover:-translate-y-1 hover:bg-background-tertiary',
+        'bg-bg-secondary border border-border rounded-xl p-6 transition-all duration-300',
+        hover && 'hover:border-border-hover hover:bg-bg-tertiary/50',
         className
       )}
     >

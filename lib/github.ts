@@ -11,15 +11,9 @@ export async function getLatestRelease(): Promise<GitHubRelease | null> {
   try {
     const response = await fetch(
       `https://api.github.com/repos/${GITHUB_REPO}/releases/latest`,
-      {
-        next: { revalidate: 3600 }, // Cache for 1 hour
-      }
+      { next: { revalidate: 3600 } }
     );
-
-    if (!response.ok) {
-      return null;
-    }
-
+    if (!response.ok) return null;
     return response.json();
   } catch {
     return null;

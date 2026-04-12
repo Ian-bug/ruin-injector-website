@@ -1,4 +1,3 @@
-import React from 'react';
 import { cn } from '@/lib/utils';
 
 interface CodeBlockProps {
@@ -9,14 +8,12 @@ interface CodeBlockProps {
 
 export default function CodeBlock({ children, language, className }: CodeBlockProps) {
   return (
-    <div className={cn('relative group', className)}>
-      <pre className="bg-background-secondary border-2 border-border rounded-lg p-4 overflow-x-auto">
-        <code className={`font-mono text-sm text-text-secondary`}>
-          {children}
-        </code>
+    <div className={cn('relative', className)}>
+      <pre className="bg-bg border border-border rounded-lg p-4 overflow-x-auto">
+        <code className="font-mono text-sm text-txt-secondary leading-relaxed">{children}</code>
       </pre>
       {language && (
-        <div className="absolute top-2 right-2 px-2 py-1 bg-background-tertiary rounded text-xs text-text-tertiary font-mono">
+        <div className="absolute top-2 right-2 px-2 py-0.5 bg-bg-tertiary border border-border rounded text-[11px] text-txt-tertiary font-mono uppercase tracking-wider">
           {language}
         </div>
       )}

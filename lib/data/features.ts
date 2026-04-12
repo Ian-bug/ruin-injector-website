@@ -4,16 +4,16 @@ export interface Feature {
 }
 
 export const features: Feature[] = [
-  { key: 'modernGui', icon: '🎨' },
-  { key: 'animatedTransitions', icon: '✨' },
-  { key: 'processBrowser', icon: '🔍' },
-  { key: 'autoConfig', icon: '⚙️' },
-  { key: 'autoInject', icon: '🚀' },
-  { key: 'injectionHistory', icon: '📜' },
-  { key: 'realtimeLogging', icon: '📊' },
-  { key: 'lightweight', icon: '🪶' },
-  { key: 'uwpProtection', icon: '🛡️' },
-  { key: 'architectureDetection', icon: '🏗️' },
-  { key: 'adminStatus', icon: '👤' },
-  { key: 'robustErrorHandling', icon: '🛠️' },
+  { key: 'modernGui', icon: 'monitor' },
+  { key: 'animatedTransitions', icon: 'sparkles' },
+  { key: 'processBrowser', icon: 'search' },
+  { key: 'autoConfig', icon: 'settings' },
+  { key: 'autoInject', icon: 'rocket' },
+  { key: 'injectionHistory', icon: 'clock' },
+  { key: 'realtimeLogging', icon: 'terminal' },
+  { key: 'lightweight', icon: 'feather' },
+  { key: 'uwpProtection', icon: 'shield' },
+  { key: 'architectureDetection', icon: 'cpu' },
+  { key: 'adminStatus', icon: 'user' },
+  { key: 'robustErrorHandling', icon: 'alert-triangle' },
 ];
