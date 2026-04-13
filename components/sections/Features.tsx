@@ -24,33 +24,40 @@ export default function Features() {
   const t = useTranslations('features');
 
   return (
-    <section id="features" className="section-y bg-bg-secondary relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none" style={{
-        backgroundImage: 'radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px)',
-        backgroundSize: '24px 24px',
-      }} />
+    <section id="features" className="section-y relative overflow-hidden">
+      <div className="absolute inset-0 bg-bg-secondary pointer-events-none" />
+      <div className="absolute inset-0 bg-dots opacity-40 pointer-events-none" />
 
       <div className="container-main relative z-10">
         <ScrollReveal>
-          <div className="text-center mb-14">
-            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-accent mb-3">
-              {t('title').includes('Features') || t('title').includes('\u529F\u80FD') ? '' : ''}
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-b from-txt to-txt/60 bg-clip-text text-transparent">
-              {t('title')}
-            </h2>
-            <p className="text-txt-secondary max-w-md mx-auto text-sm">{t('subtitle')}</p>
+          <div className="flex items-start gap-4 mb-16">
+            <div className="hidden sm:block pt-2">
+              <span className="text-[10px] font-mono text-accent/50 tracking-widest">01</span>
+            </div>
+            <div>
+              <p className="text-[10px] font-mono text-accent uppercase tracking-[0.25em] mb-3">
+                {'//'} capabilities
+              </p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-txt">
+                {t('title')}
+              </h2>
+              <p className="text-sm text-txt-secondary mt-3 max-w-md">{t('subtitle')}</p>
+            </div>
           </div>
         </ScrollReveal>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {features.map((feature, i) => (
             <ScrollReveal key={feature.key} delay={i * 0.04}>
-              <FeatureCard featureKey={feature.key} icon={iconPaths[feature.icon] || iconPaths.sparkles}>
-                <h3 className="text-sm font-semibold text-txt mb-1.5">
+              <FeatureCard
+                featureKey={feature.key}
+                icon={iconPaths[feature.icon] || iconPaths.sparkles}
+                index={i}
+              >
+                <h3 className="text-sm font-semibold text-txt mb-1.5 font-mono">
                   {t(`list.${feature.key}.title`)}
                 </h3>
-                <p className="text-xs text-txt-secondary leading-relaxed">
+                <p className="text-xs text-txt-secondary leading-relaxed font-light">
                   {t(`list.${feature.key}.description`)}
                 </p>
               </FeatureCard>
@@ -62,22 +69,25 @@ export default function Features() {
   );
 }
 
-function FeatureCard({ children, icon, featureKey }: { children: React.ReactNode; icon: string; featureKey: string }) {
+function FeatureCard({ children, icon, featureKey, index }: { children: React.ReactNode; icon: string; featureKey: string; index: number }) {
   return (
-    <div className="group relative p-5 rounded-xl bg-bg-tertiary/30 border border-border/50 transition-all duration-300 hover:border-border-hover hover:bg-bg-tertiary/60 cursor-default overflow-hidden">
-      <div className="pointer-events-none absolute -left-[1px] -top-[1px] h-[6px] w-[6px] border-l-2 border-t-2 border-accent/0 transition-all duration-300 group-hover:border-accent/60" />
-      <div className="pointer-events-none absolute -right-[1px] -top-[1px] h-[6px] w-[6px] border-r-2 border-t-2 border-accent/0 transition-all duration-300 group-hover:border-accent/60" />
-      <div className="pointer-events-none absolute -left-[1px] -bottom-[1px] h-[6px] w-[6px] border-l-2 border-b-2 border-accent/0 transition-all duration-300 group-hover:border-accent/60" />
-      <div className="pointer-events-none absolute -right-[1px] -bottom-[1px] h-[6px] w-[6px] border-r-2 border-b-2 border-accent/0 transition-all duration-300 group-hover:border-accent/60" />
+    <div className="group relative p-5 bg-bg/60 border border-border/60 hover:border-accent/20 transition-all duration-300 cursor-default overflow-hidden">
+      <div className="absolute top-0 left-0 w-8 h-[1px] bg-gradient-to-r from-accent/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-      <div className="relative z-10 space-y-3">
-        <div className="w-9 h-9 rounded-lg bg-accent/5 border border-accent/10 flex items-center justify-center transition-colors group-hover:bg-accent/10 group-hover:border-accent/20">
-          <svg className="w-4 h-4 text-accent/70 group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
+      <div className="absolute top-0 right-0 text-[9px] font-mono text-txt-muted/30 pt-2 pr-3 select-none">
+        {String(index + 1).padStart(2, '0')}
+      </div>
+
+      <div className="space-y-3">
+        <div className="w-9 h-9 flex items-center justify-center border border-border/60 group-hover:border-accent/20 transition-colors duration-300">
+          <svg className="w-4 h-4 text-txt-tertiary group-hover:text-accent transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d={icon} />
           </svg>
         </div>
         {children}
       </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     </div>
   );
 }

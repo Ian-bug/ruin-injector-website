@@ -16,9 +16,9 @@ export default function ScrollReveal({
   delay = 0,
   direction = 'up',
 }: ScrollRevealProps) {
-  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+  const { ref, inView } = useInView({ threshold: 0.08, triggerOnce: true });
 
-  const offset = 40;
+  const offset = 36;
   const variants = {
     up: { hidden: { y: offset, opacity: 0 }, visible: { y: 0, opacity: 1 } },
     down: { hidden: { y: -offset, opacity: 0 }, visible: { y: 0, opacity: 1 } },
@@ -32,7 +32,7 @@ export default function ScrollReveal({
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       variants={variants[direction]}
-      transition={{ duration: 0.5, delay, ease: 'easeOut' }}
+      transition={{ duration: 0.55, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={className}
     >
       {children}

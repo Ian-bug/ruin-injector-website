@@ -35,44 +35,41 @@ export default function LanguageDropdown() {
     <div className="relative" ref={ref}>
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-bg-tertiary border border-border hover:border-border-hover transition-colors cursor-pointer text-sm"
+        className="flex items-center gap-2 px-3 py-1.5 border border-border/60 hover:border-accent/30 hover:bg-accent/5 transition-all duration-200 cursor-pointer text-xs font-mono"
       >
-        <span className="text-xs font-bold text-txt-secondary">
+        <span className="text-[10px] font-bold text-accent">
           {localeFlags[locale]}
         </span>
         <span className="hidden sm:inline text-txt-secondary font-medium">
           {localeNames[locale]}
         </span>
         <svg
-          className={cn('w-3.5 h-3.5 text-txt-tertiary transition-transform', open && 'rotate-180')}
+          className={cn('w-3 h-3 text-txt-muted transition-transform duration-200', open && 'rotate-180')}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
+          strokeWidth={1.5}
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
       </button>
 
       {open && (
-        <div className="absolute right-0 mt-2 w-40 bg-bg-tertiary border border-border rounded-lg shadow-2xl overflow-hidden z-50">
+        <div className="absolute right-0 mt-2 w-40 bg-bg-secondary border border-border/60 shadow-2xl overflow-hidden z-50">
           {(['en', 'zh'] as const).map((loc) => (
             <button
               key={loc}
               onClick={() => switchLocale(loc)}
               className={cn(
-                'w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm transition-colors cursor-pointer',
-                locale === loc ? 'bg-accent-soft text-accent' : 'text-txt-secondary hover:bg-bg-elevated hover:text-txt'
+                'w-full flex items-center gap-3 px-4 py-2.5 text-left text-xs transition-colors cursor-pointer font-mono',
+                locale === loc ? 'bg-accent/5 text-accent' : 'text-txt-secondary hover:bg-bg-elevated/50 hover:text-txt'
               )}
             >
-              <span className="text-xs font-bold">{localeFlags[loc]}</span>
-              <span className="font-medium">{localeNames[loc]}</span>
+              <span className="text-[10px] font-bold">{localeFlags[loc]}</span>
+              <span>{localeNames[loc]}</span>
               {locale === loc && (
-                <svg className="w-4 h-4 ml-auto" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fillRule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clipRule="evenodd"
-                  />
+                <svg className="w-3.5 h-3.5 ml-auto" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               )}
             </button>
