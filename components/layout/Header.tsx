@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import LanguageDropdown from '@/components/ui/LanguageDropdown';
 import { cn } from '@/lib/utils';
 
-const NAV_LINKS = ['features', 'docs', 'download'] as const;
+const NAV_LINKS = ['features', 'howItWorks', 'tech'] as const;
 
 export default function Header() {
   const t = useTranslations('header');
@@ -46,8 +46,7 @@ export default function Header() {
               </svg>
             </div>
             <div className="flex flex-col">
-              <span className="text-sm font-semibold text-txt tracking-tight leading-none font-mono">RUIN</span>
-              <span className="text-[9px] text-txt-tertiary font-mono uppercase tracking-widest leading-none mt-0.5">injector</span>
+              <span className="text-sm font-semibold text-txt tracking-tight leading-none font-mono">Ruin<span className="text-accent">.</span></span>
             </div>
           </a>
 
@@ -55,13 +54,22 @@ export default function Header() {
             {NAV_LINKS.map((key) => (
               <a
                 key={key}
-                href={`#${key}`}
+                href={`#${key === 'howItWorks' ? 'how-it-works' : key}`}
                 className="relative px-4 py-2 text-xs font-mono text-txt-secondary hover:text-accent transition-colors duration-200 group"
               >
                 <span className="relative z-10">{t(`nav.${key}`)}</span>
                 <span className="absolute bottom-1 left-4 right-4 h-[1px] bg-accent/0 group-hover:bg-accent/60 transition-colors duration-200" />
               </a>
             ))}
+
+            <a
+              href="https://github.com/Ian-bug/ruin-injector/releases"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 px-4 py-2 text-xs font-mono text-txt-secondary bg-bg-elevated border border-border/60 hover:border-accent/30 hover:text-accent transition-all duration-200"
+            >
+              {t('nav.download')}
+            </a>
           </div>
 
           <div className="flex items-center gap-3">
@@ -93,13 +101,22 @@ export default function Header() {
             {NAV_LINKS.map((key) => (
               <a
                 key={key}
-                href={`#${key}`}
+                href={`#${key === 'howItWorks' ? 'how-it-works' : key}`}
                 onClick={() => setMobileOpen(false)}
                 className="py-3 px-4 text-sm font-mono text-txt-secondary hover:text-accent hover:bg-accent/5 rounded-sm transition-colors border-l-2 border-transparent hover:border-accent/50"
               >
-                {'//'} {t(`nav.${key}`)}
+                {t(`nav.${key}`)}
               </a>
             ))}
+            <a
+              href="https://github.com/Ian-bug/ruin-injector/releases"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="py-3 px-4 text-sm font-mono text-accent hover:bg-accent/5 rounded-sm transition-colors border-l-2 border-accent/50"
+            >
+              {t('nav.download')}
+            </a>
           </div>
         </div>
       )}
