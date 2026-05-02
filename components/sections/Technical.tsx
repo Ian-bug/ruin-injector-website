@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import Image from 'next/image';
 
 const TECH_KEYS = ['rust', 'egui', 'windowsRs', 'serdeDirs'] as const;
 
@@ -47,26 +48,38 @@ export default function Technical() {
         </div>
 
         <ScrollReveal delay={0.3}>
-          <div className="mt-10 border border-border/40 bg-bg-secondary/50 overflow-hidden relative">
-            <div className="aspect-video flex items-center justify-center flex-col gap-3 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-bg-tertiary/50 to-bg-secondary/50" />
-              <div className="absolute inset-0 opacity-30"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(0,229,255,0.03), rgba(255,77,109,0.02))',
-                }}
-              />
+          <div className="mt-10 border border-border/40 bg-bg-secondary/50 overflow-hidden relative group">
+            <div className="flex items-center gap-2 px-4 py-3 border-b border-border/40 bg-bg-tertiary/30">
+              <div className="flex gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-coral/60" />
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
+                <div className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
+              </div>
+              <div className="flex-1 text-center">
+                <span className="text-[10px] font-mono text-txt-muted tracking-wide">ruin-injector.exe</span>
+              </div>
+              <div className="w-16" />
+            </div>
 
-              <svg className="w-12 h-12 text-txt-muted/30 relative z-10" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M112.5 68.3L78.8 34.6l-9.2-23.2L55.5 29.4 33.2 19.7l-4.4 25L3.5 58.3l18.5 17.8-4.3 26.4 22.3-9.7 27.3 9.7-4.3-25.3 49.5-8.9z" stroke="currentColor" strokeWidth="2" fill="none" />
-              </svg>
+            <div className="relative p-2">
+              <div className="absolute inset-0 bg-gradient-to-b from-accent/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="rounded overflow-hidden border border-border/30">
+                <Image
+                  src="/images/screenshot.png"
+                  alt="Ruin DLL Injector Interface"
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto"
+                  priority
+                />
+              </div>
+            </div>
 
-              <div className="relative z-10 text-center">
-                <span className="text-[11px] font-mono text-txt-muted uppercase tracking-[0.12em] block">
-                  {t('visualPlaceholder')}
-                </span>
-                <span className="text-[11px] font-mono text-txt-muted/50 mt-1 block">
-                  {t('visualSubtext')}
-                </span>
+            <div className="px-4 py-2.5 border-t border-border/20 flex items-center justify-between">
+              <span className="text-[10px] font-mono text-txt-muted">Rust + egui</span>
+              <div className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-500/60" />
+                <span className="text-[10px] font-mono text-txt-tertiary">native</span>
               </div>
             </div>
           </div>
