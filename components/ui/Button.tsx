@@ -16,23 +16,23 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const base =
-    'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none disabled:opacity-50 disabled:pointer-events-none cursor-pointer font-mono text-sm tracking-wide uppercase';
+    'inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:opacity-50 disabled:pointer-events-none cursor-pointer font-mono text-sm tracking-tight relative overflow-hidden';
 
   const variants = {
     primary:
-      'bg-accent/10 text-accent border border-accent/30 hover:bg-accent/20 hover:border-accent/50 hover:shadow-[0_0_20px_rgba(0,229,255,0.15)] active:scale-[0.98]',
+      'bg-accent/10 text-accent border border-accent/30 hover:bg-accent/20 hover:border-accent/50 hover:shadow-[0_0_24px_rgba(0,229,255,0.18)] active:scale-[0.97] hover:-translate-y-px',
     secondary:
-      'bg-bg-tertiary/60 text-txt-secondary border border-border hover:border-border-hover hover:text-txt hover:bg-bg-elevated/50',
+      'bg-bg-tertiary/60 text-txt-secondary border border-border hover:border-border-hover hover:text-txt hover:bg-bg-elevated/50 hover:shadow-[0_4px_16px_rgba(0,0,0,0.2)] active:scale-[0.97] hover:-translate-y-px',
     ghost:
-      'bg-transparent text-txt-secondary hover:text-accent hover:bg-accent/5',
+      'bg-transparent text-txt-secondary hover:text-accent hover:bg-accent/5 active:scale-[0.98]',
     coral:
-      'bg-coral/10 text-coral border border-coral/30 hover:bg-coral/20 hover:border-coral/50 hover:shadow-[0_0_20px_rgba(255,77,109,0.15)] active:scale-[0.98]',
+      'bg-coral/10 text-coral border border-coral/30 hover:bg-coral/20 hover:border-coral/50 hover:shadow-[0_0_24px_rgba(255,77,109,0.18)] active:scale-[0.97] hover:-translate-y-px',
   };
 
   const sizes = {
-    sm: 'px-4 py-2 text-xs gap-1.5',
-    md: 'px-6 py-2.5 text-xs gap-2',
-    lg: 'px-8 py-3.5 text-sm gap-2.5',
+    sm: 'px-4 py-2 text-xs gap-1.5 rounded-lg',
+    md: 'px-6 py-2.5 text-xs gap-2 rounded-lg',
+    lg: 'px-8 py-3.5 text-sm gap-2.5 rounded-xl',
   };
 
   return (

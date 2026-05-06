@@ -3,6 +3,7 @@ import Hero from '@/components/sections/Hero';
 import Features from '@/components/sections/Features';
 import Workflow from '@/components/sections/Workflow';
 import Technical from '@/components/sections/Technical';
+import Documentation from '@/components/sections/Documentation';
 import Download from '@/components/sections/Download';
 import Footer from '@/components/sections/Footer';
 import { getLatestRelease, parseVersion } from '@/lib/github';
@@ -20,6 +21,7 @@ export default async function Home() {
       <Features />
       <Workflow />
       <Technical />
+      <Documentation />
       <Download version={version} />
       <Footer />
     </main>

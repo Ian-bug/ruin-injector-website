@@ -32,16 +32,15 @@ export default function Header() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         scrolled
-          ? 'bg-bg/80 backdrop-blur-xl border-b border-border/50'
+          ? 'bg-bg/85 backdrop-blur-2xl border-b border-border/40 shadow-[0_4px_30px_rgba(0,0,0,0.15)]'
           : 'bg-transparent'
       )}
     >
       <div className="container-main">
         <nav className="flex items-center justify-between h-16">
           <a href="/" className="flex items-center gap-3 group">
-            <div className="relative w-8 h-8 flex items-center justify-center">
-              <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors duration-300" />
-              <svg className="w-4 h-4 text-accent relative z-10" viewBox="0 0 24 24" fill="currentColor">
+            <div className="relative w-8 h-8 flex items-center justify-center rounded-lg bg-accent/8 border border-accent/15 group-hover:bg-accent/15 group-hover:border-accent/25 transition-all duration-300">
+              <svg className="w-4 h-4 text-accent" viewBox="0 0 24 24" fill="currentColor">
                 <path d="m11.15 15.18l-1.42-1.41l1.42-1.42l1.41 1.42l1.41-1.42l-1.41-1.41l1.41-1.41l1.42 1.41l1.41-1.41l-2.83-2.83l-7.07 7.07l2.83 2.83zM3.08 19l3.12-3.11l-2.12-2.12l9.89-9.9L16.1 6l1.4-1.42l-1.4-1.42l1.4-1.41L21.75 6l-1.41 1.4L18.92 6L17.5 7.4l2.13 2.13l-9.9 9.89l-2.12-2.12l-4.53 4.54z" />
               </svg>
             </div>
@@ -55,10 +54,10 @@ export default function Header() {
               <a
                 key={key}
                 href={`#${key === 'howItWorks' ? 'how-it-works' : key}`}
-                className="relative px-4 py-2 text-xs font-mono text-txt-secondary hover:text-accent transition-colors duration-200 group"
+                className="relative px-4 py-2 text-xs font-mono text-txt-secondary hover:text-accent transition-all duration-200 focus-visible:outline-none focus-visible:text-accent group"
               >
                 <span className="relative z-10">{t(`nav.${key}`)}</span>
-                <span className="absolute bottom-1 left-4 right-4 h-[1px] bg-accent/0 group-hover:bg-accent/60 transition-colors duration-200" />
+                <span className="absolute bottom-1 left-4 right-4 h-[1px] bg-accent/0 group-hover:bg-accent/60 transition-all duration-200" />
               </a>
             ))}
 
@@ -66,7 +65,7 @@ export default function Header() {
               href="https://github.com/Ian-bug/ruin-injector/releases"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-2 px-4 py-2 text-xs font-mono text-txt-secondary bg-bg-elevated border border-border/60 hover:border-accent/30 hover:text-accent transition-all duration-200"
+              className="ml-3 px-4 py-2 text-xs font-mono text-txt-secondary bg-bg-elevated/60 border border-border/50 hover:border-accent/25 hover:text-accent hover:bg-accent/[0.04] transition-all duration-200 rounded-lg hover:-translate-y-px hover:shadow-[0_4px_12px_rgba(0,0,0,0.15)]"
             >
               {t('nav.download')}
             </a>
@@ -76,7 +75,7 @@ export default function Header() {
             <LanguageDropdown />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden p-2.5 rounded-sm border border-border hover:border-accent/30 hover:bg-accent/5 transition-all duration-200 cursor-pointer"
+              className="md:hidden p-2.5 rounded-lg border border-border/50 hover:border-accent/30 hover:bg-accent/5 transition-all duration-200 cursor-pointer"
               aria-label="Toggle menu"
             >
               <svg className="w-4 h-4 text-txt-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
@@ -96,14 +95,14 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden fixed inset-0 top-16 bg-bg/95 backdrop-blur-xl z-40 animate-[slideDown_0.2s_ease-out] border-t border-border/50">
+        <div className="md:hidden fixed inset-0 top-16 bg-bg/97 backdrop-blur-2xl z-40 animate-[slideDown_0.2s_ease-out] border-t border-border/40">
           <div className="flex flex-col p-6 gap-1">
             {NAV_LINKS.map((key) => (
               <a
                 key={key}
                 href={`#${key === 'howItWorks' ? 'how-it-works' : key}`}
                 onClick={() => setMobileOpen(false)}
-                className="py-3 px-4 text-sm font-mono text-txt-secondary hover:text-accent hover:bg-accent/5 rounded-sm transition-colors border-l-2 border-transparent hover:border-accent/50"
+                className="py-3 px-4 text-sm font-mono text-txt-secondary hover:text-accent hover:bg-accent/5 rounded-lg transition-colors border-l-2 border-transparent hover:border-accent/50"
               >
                 {t(`nav.${key}`)}
               </a>
@@ -113,7 +112,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
-              className="py-3 px-4 text-sm font-mono text-accent hover:bg-accent/5 rounded-sm transition-colors border-l-2 border-accent/50"
+              className="py-3 px-4 text-sm font-mono text-accent hover:bg-accent/5 rounded-lg transition-colors border-l-2 border-accent/50"
             >
               {t('nav.download')}
             </a>

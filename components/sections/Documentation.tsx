@@ -55,7 +55,7 @@ export default function Documentation() {
       content: (
         <div className="space-y-3">
           <p className="text-sm text-txt-secondary font-light leading-relaxed">{t('quickStart.building.content')}</p>
-          <code className="block px-4 py-3 bg-bg border border-border/60 text-sm text-accent font-mono tracking-tight">
+          <code className="block px-4 py-3 bg-bg border border-border/60 text-sm text-accent font-mono tracking-tight rounded-lg">
             $ cargo build --release
           </code>
         </div>
@@ -68,7 +68,7 @@ export default function Documentation() {
         <div className="space-y-3">
           <p className="text-sm text-txt-secondary font-light leading-relaxed">{t('quickStart.running.content')}</p>
           <p className="text-sm text-txt font-light">
-            Double-click <code className="text-accent font-mono text-xs bg-accent/5 px-1.5 py-0.5 border border-accent/15">ruin-injector.exe</code> to launch.
+            Double-click <code className="text-accent font-mono text-xs bg-accent/5 px-1.5 py-0.5 border border-accent/15 rounded">ruin-injector.exe</code> to launch.
           </p>
         </div>
       ),
@@ -134,11 +134,17 @@ export default function Documentation() {
 
   return (
     <section id="docs" className="section-y relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none" />
+      <div
+        className="absolute top-1/2 left-0 w-[400px] h-[400px] pointer-events-none -translate-y-1/2"
+        style={{
+          background: 'radial-gradient(ellipse at center, rgba(0,229,255,0.025) 0%, transparent 60%)',
+          filter: 'blur(50px)',
+        }}
+      />
 
       <div className="container-main relative z-10">
         <ScrollReveal>
-          <div className="flex items-start gap-4 mb-14">
+          <div className="flex items-start gap-4 mb-14 md:mb-16">
             <div className="hidden sm:block pt-2">
               <span className="text-[10px] font-mono text-accent/50 tracking-widest">04</span>
             </div>
@@ -155,8 +161,8 @@ export default function Documentation() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.12}>
-          <Card hover={false} className="max-w-3xl mx-auto p-0 overflow-hidden">
-            <div className="divide-y divide-border/40">
+          <Card hover={false} className="max-w-3xl mx-auto p-0 overflow-hidden rounded-xl">
+            <div className="divide-y divide-border/30">
               {sections.map((s, index) => (
                 <motion.div
                   key={s.key}
